@@ -104,6 +104,8 @@ padding: 0 0 10px 0;
     transform-origin: center left;
     position: relative;
 }
+
+/*La virgulilla sirve par que el contenedor no se sobreponga sobre otro.*/
 .carousel-item:hover ~ .carousel-item {
     transform: translate3d(50px, 0, 0);
 }
