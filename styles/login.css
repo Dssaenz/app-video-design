@@ -22,7 +22,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0px 30px;
+    padding: 0 30px;
     min-height: calc(100vh - 200px);
 }
 
