@@ -82,6 +82,16 @@ body {
     margin: 0 10px 0 0;
 }
 
+.login__container--social-media > div > a {
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login__container--social-media > div > a:hover {
+    text-decoration: underline;
+}
+
 .login__container--register {
     font-size: 14px;
 }
