@@ -100,11 +100,10 @@ body {
     font-size: 16px;
     color: #FFF;
     font-weight: bold;
-    text-decoration: none;
 }
 
 .login__container--register a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .input {
@@ -122,22 +121,22 @@ body {
     outline: none;
 }
 ::placeholder {
-    color: #FFF;
+    color: rgba(255,255,255, 0.6);
 }
 
 .button {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
+    height: 50px;
     color: #FFF;
     border: none;
     outline: none;
     font-size: 14px;
-    font-weight: bold;
     cursor: pointer;
-    height: 50px;
-    letter-spacing: 1px;
-    font-family: 'Muli', sans-serif;
     margin: 10px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    font-family: 'Muli', sans-serif;
+    background-color: rgba(255, 255, 255, 0.2);
     box-shadow: -2px 11px 30px -23px rgba(0,0,0,0.75);
 }
 
