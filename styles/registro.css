@@ -1,11 +1,11 @@
 body {
     margin: 0;
     font-family: 'Muli', sans-serif;
+    background: linear-gradient(#005377, #06A77D);
 }
 .header {
     width: 100%;
     height: 80px;
-    background-color: #21C08B;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,7 +17,7 @@ body {
 }
 
 .register {
-    background: linear-gradient(#21C082, #AB88FF);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +101,6 @@ body {
     align-items: center;
     width: 100%;
     height: 100px;
-    background-color: #AB88FF;
 }
 
 .footer a {
@@ -114,4 +113,25 @@ body {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    .register {
+        width: 100%;
+    }
+    .register__container {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0 35px;
+    }
+    .footer a {
+        margin: 0 0 10px 0;
+    }
 }
