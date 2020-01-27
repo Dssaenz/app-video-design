@@ -151,8 +151,23 @@ padding: 0 20px 10px 20px;
     right: 0;
 }
 
-.carousel-item__details:hover  {
+.carousel-item__details:hover {
     opacity: 1;
+}
+
+.carousel-item__details img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 125px;
+}
+
+.carousel-item__details p {
+    color: white;
+    font-family: 'Muli', sans-serif;
+    position: relative;
+    top: 120px;
+    margin: 10px 0;
 }
 
 .carousel-item__details--title {
