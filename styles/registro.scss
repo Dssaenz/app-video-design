@@ -1,0 +1,156 @@
+$white: #FFF;
+$whiteGreen: #06A77D;
+$darkBlue: #005377;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flexAround {
+    display: flex;
+    justify-content: space-around;
+}
+
+body {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    background: linear-gradient($darkBlue, $whiteGreen);
+}
+.header {
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    @include flexBetween;
+}
+
+.header__img {
+    width: 200px;
+    margin: 10px 0 0 10px;
+}
+
+.register {
+    @include flex;
+    padding: 0 30px;
+    justify-content: center;
+    flex-direction: column;
+    min-height: calc(100vh -200px);
+}
+
+.register__container {
+    width: 300px;
+    color: $white;
+    min-height: 620px;
+    border-radius: 40px;
+    @include flexAround;
+    flex-direction: column;
+    padding: 60px 68px 30px;
+    border: 2px solid $white;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: -2px 11px 30px -8px rgba(0,0,0,0.75);
+    p {
+        a {
+           text-decoration: none; 
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.register__container--title {
+    margin: 0;
+    font-weight: bold;
+}
+
+.register__container--form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    height: 50px;
+    outline: none;
+    border-top: 0;
+    color: $white;
+    border-left: 0;
+    padding: 0 20px;
+    font-size: 16px;
+    border-right: 0;
+    margin: 0 0 20px 0;
+    background-color: transparent;
+    border-bottom: 1px solid $white;
+    font-family: 'Muli', sans-serif;
+}
+::placeholder {
+    color: rgba(255,255,255, 0.6);
+}
+
+.button {
+    color: $white;
+    border: none;
+    height: 50px;
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 25px;
+    letter-spacing: 1px;
+    font-family: 'Muli', sans-serif;
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: -2px 11px 30px -8px rgba(0,0,0,0.15);
+}
+
+.register__text a {
+    color: $white;
+    display: flex;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    justify-content: center;
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    @include flex;
+    a {
+        color: $white;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 0 0 0 30px;
+        text-decoration: none;
+        font-family: 'Muli', sans-serif;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .register {
+        width: 100%;
+    }
+    .register__container {
+        padding: 0;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 35px;
+        a {
+            margin: 0 0 10px 0;
+        }
+    }
+}

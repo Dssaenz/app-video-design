@@ -1,0 +1,215 @@
+$white: #FFF;
+$whiteGreen: #06A77D;
+$darkBlue: #005377;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flexAround {
+    display: flex;
+    justify-content: space-around;
+}
+
+body {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    background: linear-gradient($darkBlue, $whiteGreen);
+}
+.header {
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    @include flexBetween;
+}
+.header__img {
+    width: 200px;
+    margin: 10px 0 0 10px;
+}
+.header__menu {
+    margin: 0 0 0 0;
+    ul {
+        width: 100px;
+        padding: 0px;
+        display: none;
+        list-style: none;
+        text-align: right;
+        position: absolute;
+        margin: 0 0 0 -11px;
+    }
+    li {
+        margin: 10px 0;
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.header__menu--profile {
+    width: 130px;
+    @include flex;
+    text-align: end;
+    margin: 0 8px 0 0;
+    img {
+        width: 40px;
+        margin-right: 8px;
+    }
+    p {
+        margin: 0;
+        color: $white;
+    }
+}
+
+.header__menu:hover ul , ul:hover {
+    display: block;
+}
+
+.main {
+    width: 100%;
+    height: 170px;
+    @include flex;
+    flex-direction: column;
+}
+.main__title {
+    color: $white;
+    font-size: 25px;
+    text-align: center;
+}
+.input {
+    width: 80%;
+    height: 50px;
+    outline: none;
+    color: $white;
+    font-size: 16px;
+    padding: 0 20px;
+    border-radius: 25px;
+    border: 2px solid $white;
+    font-family: 'Muli', sans-serif;
+    background-color: rgba( 255,255,255,0.1);
+}
+::placeholder {
+    color: rgba( 255,255,255,0.6);
+}
+
+.categories__title {
+    width: 95%;
+    color: $white;
+    font-size: 16px;
+    position: absolute;
+    padding-left: 30px;
+}
+.carousel {
+    width: 100%;
+    overflow: scroll;
+    position: relative;
+}
+
+.carousel__container {
+    white-space: nowrap;
+    margin: 70px 0 40px 0;
+    padding: 0 20px 10px 20px;
+}
+
+.carousel-item {
+    width: 200px;
+    height: 250px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 20px;
+    transition: 460ms all;
+    display: inline-block;
+    background-color: aqua;
+    transform-origin: center left;
+}
+
+/*La virgulilla sirve par que el contenedor no se sobreponga sobre otro.*/
+.carousel-item:hover ~ .carousel-item {
+    transform: translate3d(50px, 0, 0);
+}
+
+.carousel__container:hover .carousel-item {
+    opacity: 0.4;
+}
+
+.carousel__container:hover .carousel-item:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.carousel-item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.carousel-item__details {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0; 
+    padding: 10px;
+    font-size: 10px;
+    position: absolute;
+    transition: 160ms opacity;
+    /*Los gradientes en los colores, puede empezar desde la posición que desee(arriba)*/
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    img {
+        top: 125px;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+    p {
+        top: 120px;
+        color: $white;
+        margin: 10px 0;
+        position: relative;
+        font-family: 'Muli', sans-serif;
+    }
+}
+
+.carousel-item__details:hover {
+    opacity: 1;
+}
+
+.carousel-item__details--title {
+    width: 80%;
+    color: $white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Muli', sans-serif;
+}
+
+.carousel-item__details--subtitle {
+    color: $white;
+    font-size: 10px;
+    font-family: 'Muli', sans-serif;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    @include flex;
+    a {
+        color: $white;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 0 0 0 30px;
+        text-decoration: none;
+        font-family: 'Muli', sans-serif;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
