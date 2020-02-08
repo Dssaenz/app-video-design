@@ -1,0 +1,185 @@
+$white: #FFF;
+$whiteGreen: #06A77D;
+$darkBlue: #005377;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flexAround {
+    display: flex;
+    justify-content: space-around;
+}
+
+body {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    background: linear-gradient($darkBlue, $whiteGreen);
+}
+.header {
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    @include flexBetween;
+}
+
+.header__img {
+    width: 200px;
+    margin: 10px 0 0 10px;
+}
+
+.login {
+    @include flex;
+    padding: 0 30px;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 200px);
+}
+
+.login__container {
+    color: $white;
+    width: 300px;
+    min-height: 620px;
+    @include flexAround;
+    border-radius: 40px;
+    flex-direction: column;
+    padding: 60px 68px 40px;
+    border: 2px solid $white;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: -2px 11px 30px -8px rgba(0,0,0,0.75);
+}
+
+.login__container--title {
+    margin: 0;
+}
+
+.login__container--form {
+    display: flex;
+    flex-direction: column;
+    label {
+        font-size: 14px;
+    }
+}
+
+.login__container--remember {
+    color: $white;
+    margin: 10px 0 0 0; 
+    @include flexBetween;
+    a {
+        color: $white;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.login__container--social-media > div  {
+    @include flex;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.login__container--social-media > div > img {
+    width: 30px;
+    margin: 0 10px 0 0;
+}
+
+.login__container--social-media > div > a {
+    color: $white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login__container--social-media > div > a:hover {
+    text-decoration: underline;
+}
+
+.login__container--register {
+    font-size: 14px;
+    a {
+        color: $white;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.input {
+    height: 50px;
+    color: $white;
+    outline: none;
+    padding: 0 20px;
+    font-size: 16px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 20px;
+    background: transparent;
+    border-bottom: 1px solid $white;
+    font-family: 'Muli', sans-serif;
+}
+::placeholder {
+    color: rgba(255,255,255, 0.6);
+}
+
+.button {
+    height: 50px;
+    color: $white;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    font-family: 'Muli', sans-serif;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: -2px 11px 30px -23px rgba(0,0,0,0.75);
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    @include flex;
+    a {
+        color: $white;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 0 0 0 30px;
+        text-decoration: none;
+        font-family: 'Muli', sans-serif;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .login {
+        width: 100%;
+    }
+    .login__container {
+        padding: 0;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        a {
+            margin: 0 0 10px 0;
+        }
+    }
+}

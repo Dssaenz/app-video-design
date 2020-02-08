@@ -1,204 +1,212 @@
+@charset "UTF-8";
 body {
-    margin: 0;
-    background-color: #005377;
-    font-family: 'Muli', sans-serif;
+  margin: 0;
+  font-family: "Muli", sans-serif;
+  background: linear-gradient(#005377, #06A77D);
 }
+
 .header {
-    width: 100%;
-    height: 80px;
-    background-color: #005377;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
+
 .header__img {
-    width: 200px;
-    margin: 10px 0 0 10px;
+  width: 200px;
+  margin: 10px 0 0 10px;
 }
+
 .header__menu {
-    margin: 0 0 0 0;
-}
-.header__menu--profile {
-    width: 130px;
-    text-align: end;
-    margin: 0 8px 0 0;
-    display: flex;
-    align-items: center;
-}
-.header__menu--profile img {
-    width: 40px;
-    margin-right: 8px;
-}
-.header__menu--profile p {
-    margin: 0;
-    color: #FFF;
+  margin: 0 0 0 0;
 }
 .header__menu ul {
-    display: none;
-    list-style: none;
-    padding: 0px;
-    position: absolute;
-    width: 100px;
-    text-align: right;
-    margin: 0 0 0 -11px;
-}
-.header__menu:hover ul , ul:hover {
-    display: block;
+  width: 100px;
+  padding: 0px;
+  display: none;
+  list-style: none;
+  text-align: right;
+  position: absolute;
+  margin: 0 0 0 -11px;
 }
 .header__menu li {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 .header__menu li a {
-    color: #fff;
-    text-decoration: none;
+  color: #FFF;
+  text-decoration: none;
 }
 .header__menu li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+.header__menu--profile {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  text-align: end;
+  margin: 0 8px 0 0;
+}
+.header__menu--profile img {
+  width: 40px;
+  margin-right: 8px;
+}
+.header__menu--profile p {
+  margin: 0;
+  color: #FFF;
+}
+
+.header__menu:hover ul, ul:hover {
+  display: block;
 }
 
 .main {
-    width: 100%;
-    height: 170px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
+
 .main__title {
-    color: #FFF;
-    text-align: center;
-    font-size: 25px;
+  color: #FFF;
+  font-size: 25px;
+  text-align: center;
 }
+
 .input {
-    width: 80%;
-    height: 50px;
-    color: #FFF;
-    font-size: 16px;
-    padding: 0 20px;
-    border-radius: 25px;
-    border: 2px solid #FFF;
-    font-family: 'Muli', sans-serif;
-    outline: none;
-    background-color: rgba( 255,255,255,0.1);
+  width: 80%;
+  height: 50px;
+  outline: none;
+  color: #FFF;
+  font-size: 16px;
+  padding: 0 20px;
+  border-radius: 25px;
+  border: 2px solid #FFF;
+  font-family: "Muli", sans-serif;
+  background-color: rgba(255, 255, 255, 0.1);
 }
+
 ::placeholder {
-    color: rgba( 255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .categories__title {
-    color: #FFF;
-    font-size: 16px;
-    position: absolute;
-    padding-left: 30px;
-    width: 100%;
+  width: 95%;
+  color: #FFF;
+  font-size: 16px;
+  position: absolute;
+  padding-left: 30px;
 }
+
 .carousel {
-    width: 100%;
-    overflow: scroll;
-    position: relative;
+  width: 100%;
+  overflow: scroll;
+  position: relative;
 }
 
 .carousel__container {
-white-space: nowrap;
-margin: 70px 0 40px 0;
-padding: 0 20px 10px 20px;
+  white-space: nowrap;
+  margin: 70px 0 40px 0;
+  padding: 0 20px 10px 20px;
 }
 
 .carousel-item {
-    width: 200px;
-    height: 250px;
-    overflow: hidden;
-    border-radius: 20px;
-    margin-right: 10px;
-    background-color: aqua;
-    display: inline-block;
-    cursor: pointer;
-    transition: 460ms all;
-    transform-origin: center left;
-    position: relative;
+  width: 200px;
+  height: 250px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  margin-right: 10px;
+  border-radius: 20px;
+  transition: 460ms all;
+  display: inline-block;
+  background-color: aqua;
+  transform-origin: center left;
 }
 
 /*La virgulilla sirve par que el contenedor no se sobreponga sobre otro.*/
 .carousel-item:hover ~ .carousel-item {
-    transform: translate3d(50px, 0, 0);
+  transform: translate3d(50px, 0, 0);
 }
 
 .carousel__container:hover .carousel-item {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 .carousel__container:hover .carousel-item:hover {
-    transform: scale(1.2);
-    opacity: 1;
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 .carousel-item__img {
-    width: 200px;
-    height: 250px;
-    object-fit: cover;
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .carousel-item__details {
-    /*Los gradientes en los colores, puede empezar desde la posición que desee(arriba)*/
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
-    font-size: 10px;
-    opacity: 0; 
-    transition: 160ms opacity;
-    padding: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  padding: 10px;
+  font-size: 10px;
+  position: absolute;
+  transition: 160ms opacity;
+  /*Los gradientes en los colores, puede empezar desde la posición que desee(arriba)*/
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.carousel-item__details img {
+  top: 125px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+.carousel-item__details p {
+  top: 120px;
+  color: #FFF;
+  margin: 10px 0;
+  position: relative;
+  font-family: "Muli", sans-serif;
 }
 
 .carousel-item__details:hover {
-    opacity: 1;
-}
-
-.carousel-item__details img {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    top: 125px;
-}
-
-.carousel-item__details p {
-    color: white;
-    font-family: 'Muli', sans-serif;
-    position: relative;
-    top: 120px;
-    margin: 10px 0;
+  opacity: 1;
 }
 
 .carousel-item__details--title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #FFF;
-    font-family: 'Muli', sans-serif;
+  width: 80%;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Muli", sans-serif;
 }
 
 .carousel-item__details--subtitle {
-    font-size: 10px;
-    color: #FFF;
-    font-family: 'Muli', sans-serif;
+  color: #FFF;
+  font-size: 10px;
+  font-family: "Muli", sans-serif;
 }
 
 .footer {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
 }
-
 .footer a {
-    font-size: 14px;
-    color: #FFF;
-    cursor: pointer;
-    padding: 0 0 0 30px;
-    text-decoration: none;
-    font-family: 'Muli', sans-serif;
+  color: #FFF;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 0 0 30px;
+  text-decoration: none;
+  font-family: "Muli", sans-serif;
+}
+.footer a:hover {
+  text-decoration: underline;
 }
 
-.footer a:hover {
-    text-decoration: underline;
-}
+/*# sourceMappingURL=home.css.map */
